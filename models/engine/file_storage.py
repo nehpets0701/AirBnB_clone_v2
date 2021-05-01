@@ -61,3 +61,7 @@ class FileStorage:
         if obj is not None:
             del FileStorage.__objects[obj.to_dict()['__class__'] + '.' +
                                       obj.id]
+
+    def close(self):
+        """deserializes json"""
+        self.reload()
