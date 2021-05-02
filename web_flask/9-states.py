@@ -12,12 +12,14 @@ def teardown(self):
     """close"""
     storage.close()
 
+
 @app.route('/states', strict_slashes=False)
 def showStates():
     """show states"""
     states = storage.all(State)
     return render_template("9-states.html", states=states,
                            justStates=1)
+
 
 @app.route('/states/<id>', strict_slashes=False)
 def states_id(id=None):

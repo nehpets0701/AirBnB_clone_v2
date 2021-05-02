@@ -11,6 +11,7 @@ def close_session(self):
     """closes"""
     storage.close()
 
+
 @app.route('/cities_by_states', strict_slashes=False)
 def html_display():
     states = storage.all(State)
